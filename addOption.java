@@ -12,9 +12,8 @@ public class addOption extends JFrame{
 	public static button add1, add2, add3, add4, minus1, minus2, minus3, minus4, cancel, finish;
 	public static toggleButton[] btnG1 = new toggleButton[2], btnG2 = new toggleButton[3]; 
 	public static ButtonGroup tempG, sizeG;
-	public static ImageIcon plus = new ImageIcon("imgs//plus.png"), 
-							minus = new ImageIcon("imgs//minus.png"); 
-	public static int coffeePrice=5000, optionPrice=0;
+	public static ImageIcon plus = new ImageIcon("imgs//plus.png"), minus = new ImageIcon("imgs//minus.png"); 
+	public static int coffeePrice=0, optionPrice=0, menuNum=0;
 	public static String[] menuName = {"아메리카노", "카푸치노", "카페라떼", "초콜릿모카", "돌체리떼", "콜드브루"};
 	public static ImageIcon[] menuImgs = {new ImageIcon("imgs//coffeeSample.png"), 
 										  new ImageIcon("imgs//coffeeSample.png"), 
@@ -32,6 +31,8 @@ public class addOption extends JFrame{
 		setVisible(true);
 		c.setBackground(Color.WHITE);
 		
+		menuNum=selectedMenu;
+		coffeePrice = connectDB.readCoffeePrice(menuName[selectedMenu]);
 		menu = new label(menuName[selectedMenu], 200, 20, 200, 100); c.add(menu);
 		menu.setFont(new Font("굴림", Font.BOLD, 20));
 		img = new label("img", 50, 50, 130, 130, menuImgs[selectedMenu]); c.add(img);

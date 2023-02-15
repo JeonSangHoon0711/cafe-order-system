@@ -8,15 +8,7 @@ public class buttonGroupHandler implements ItemListener{
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-		JButton btn  = (JButton)e.getSource();
 		
-		if(btn.getText() == "tall") {
-			
-		}else if(btn.getText() == "grande") {
-			
-		}else if(btn.getText() == "venti") {
-			
-		}
 	}
 
 }

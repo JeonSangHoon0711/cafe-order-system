@@ -13,7 +13,7 @@ public class OrderPage {
   JFrame OrderFrame = new JFrame();
   UnderPanel underpanel = new UnderPanel();
   // AmericanoButton americanoButton = new AmericanoButton();
-
+  
   public OrderPage() {
 
     
@@ -94,6 +94,7 @@ public class OrderPage {
     OrderFrame.getContentPane().add(chocolatemochaButton);
     OrderFrame.getContentPane().add(coldbrewButton);
     OrderFrame.getContentPane().add(dolcelatteButton);
+    
     
     while(true){
       OrderFrame.repaint();

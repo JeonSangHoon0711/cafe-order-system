@@ -1,3 +1,4 @@
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -50,9 +51,9 @@ public class buttonHandler implements ActionListener {
 				addOption.optionPrice-=500;
 				addOption.price.setText((addOption.coffeePrice+addOption.optionPrice)*
 						Integer.parseInt(addOption.cnt1.getText())+"");}
-		}else if(btn.getText()=="���") {
+		}else if(btn.getText()=="Ãë¼Ò") {
 			System.exit(0);
-		}else if(btn.getText()=="���ÿϷ�") {
+		}else if(btn.getText()=="¼±ÅÃ¿Ï·á") {
 			menu = addOption.menuName[addOption.menuNum];
 			num = Integer.parseInt(addOption.cnt1.getText());
 			for(int i=0; i<2; i++) {

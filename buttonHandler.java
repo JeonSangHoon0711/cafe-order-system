@@ -51,10 +51,10 @@ public class buttonHandler implements ActionListener {
 				addOption.optionPrice-=500;
 				addOption.price.setText((addOption.coffeePrice+addOption.optionPrice)*
 						Integer.parseInt(addOption.cnt1.getText())+"");}
-		}else if(btn.getText()=="ÃƒÃ«Â¼Ã’") {
-			System.exit(0);
-		}else if(btn.getText()=="Â¼Â±Ã…ÃƒÂ¿ÃÂ·Ã¡") {
-			menu = addOption.menuName[addOption.menuNum];
+		}else if(btn.getText()=="Ãë¼Ò") {
+			CoffeeListener.optionFrame.dispose();
+		}else if(btn.getText()=="¼±ÅÃ¿Ï·á") {
+			menu = addOption.menuName[addOption.selected];
 			num = Integer.parseInt(addOption.cnt1.getText());
 			for(int i=0; i<2; i++) {
 				if(addOption.btnG1[i].isSelected()) temp = addOption.btnG1[i].getText();
@@ -67,8 +67,9 @@ public class buttonHandler implements ActionListener {
 			shot = Integer.parseInt(addOption.cnt4.getText());
 			price = Integer.parseInt(addOption.price.getText());
 			history = new Data(menu, num, temp, size, whipping, syrup, shot, price);
-			//UnderPanel.orderlistTextArea.append(menu+" "+num+" "+price+"\n");
-			System.exit(0);
+			UnderPanel.orderlistTextArea.append("¸Ş´º¸í: "+menu+" ¼ö·®: "+num+"°³ °¡°İ: "+price+"\n");
+			OrderPage.OrderFrame.repaint();
+			CoffeeListener.optionFrame.dispose();
 		}
 	}
 }

@@ -34,7 +34,7 @@ class MyFrame extends JFrame{
 		add(year = new JTextField(""));
 		add(new JLabel("PRICE", JLabel.CENTER));
 		add(price = new JTextField(""));	
-		add(new JLabel("저자 검색", JLabel.CENTER));
+		add(new JLabel("���옄 寃��깋", JLabel.CENTER));
 		add(author = new JTextField(""));
 		
 		previousButton = new JButton("Previous");
@@ -80,7 +80,7 @@ class MyFrame extends JFrame{
 			con = DriverManager.getConnection(url, id, password);
 			System.out.println("db연결성공");
 		} catch (ClassNotFoundException e) {
-			System.out.println("드라이버찾을수없음");
+			System.out.println("드라이버를찾을수없음");
 		} catch (SQLException e) {
 			System.out.println("연결실패");
 		}
@@ -100,7 +100,7 @@ public class CafeOrderSystem {
 		// 	MyFrame asdf = new MyFrame();
     //         @Override
     //         public void run() {
-    //             // 여기에서 함수 호출...
+    //             // �뿬湲곗뿉�꽌 �븿�닔 �샇異�...
     //         }
     //     });
 		

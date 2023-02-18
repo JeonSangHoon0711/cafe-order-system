@@ -14,7 +14,7 @@ public class UnderPanel {
   static JScrollPane orderlistPane = new JScrollPane();
   static JButton orderbutton = new JButton();
   static int price = 0;
-  static JLabel pricelabel = new JLabel("가격 : " + price);
+  static JLabel pricelabel = new JLabel("가격: " + price);
 
   public UnderPanel(){
     underpanel.setLayout(null);

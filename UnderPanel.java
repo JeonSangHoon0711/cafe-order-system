@@ -12,9 +12,9 @@ public class UnderPanel {
   static JPanel underpanel = new JPanel();
   static JTextArea orderlistTextArea = new JTextArea();
   static JScrollPane orderlistPane = new JScrollPane();
-  static JButton orderbutton = new JButton();
+  static JButton orderbutton = new JButton("주문하기");
   static int price = 0;
-  static JLabel pricelabel = new JLabel("가격: " + price);
+  static JLabel pricelabel = new JLabel("가격 : " + price);
 
   public UnderPanel(){
     underpanel.setLayout(null);

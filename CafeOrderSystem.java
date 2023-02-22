@@ -23,6 +23,8 @@ class MyFrame extends JFrame{
 		stmt = con.createStatement();
 		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
 		rs = stmt.executeQuery(str);
+		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
+		rs = stmt.executeQuery(str);
 		setLayout(new GridLayout(0, 2));
 		add(new JLabel("ID", JLabel.CENTER));
 		add(id = new JTextField(""));
@@ -43,6 +45,7 @@ class MyFrame extends JFrame{
 				try {
 					rs.previous();
 					System.out.println(rs.getString("Tall"));
+					System.out.println(rs.getString("Tall"));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -55,6 +58,7 @@ class MyFrame extends JFrame{
 				try {
 					rs.next();
 					System.out.println(rs.getString("Tall"));
+					System.out.println(rs.getString("Tall"));
 					
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -65,6 +69,7 @@ class MyFrame extends JFrame{
 		add(nextButton);
 		add(previousButton);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(500,800);
 		setSize(500,800);
 		setVisible(true);
 		
@@ -90,7 +95,6 @@ class MyFrame extends JFrame{
 }
 
 
-
 public class CafeOrderSystem {
 	
 	
@@ -100,7 +104,7 @@ public class CafeOrderSystem {
 		// 	MyFrame asdf = new MyFrame();
     //         @Override
     //         public void run() {
-    //             // �뿬湲곗뿉�꽌 �븿�닔 �샇異�...
+    //             // 여기에서 함수 호출...
     //         }
     //     });
 		

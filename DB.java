@@ -32,18 +32,19 @@ public class DB {
 
   }
 
-  public void testmethod() throws SQLException {
+  public String getcoffee(String coffee , int num) throws SQLException {
     // 쿼리문 준비
     try {
       stmt = conn.createStatement();
-      String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
+      String str = "SELECT * FROM coffee WHERE Name = " + coffee;
       rs = stmt.executeQuery(str);
       rs.next();
     } catch (Exception e) {
       System.out.println("Board데이터 삽입 실패!");
     }
-    System.out.println(rs.getString(1));
     addOption.testtall = rs.getString("Tall");
+    System.out.println(rs.getString(num));
+    return rs.getString(num);
   }
 
 

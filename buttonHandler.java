@@ -54,7 +54,7 @@ public class buttonHandler implements ActionListener {
 		}else if(btn.getText()=="취소") {
 			CoffeeListener.optionFrame.dispose();
 		}else if(btn.getText()=="선택완료") {
-			menu = addOption.menuName[addOption.selected];
+			menu = addOption.name;
 			num = Integer.parseInt(addOption.cnt1.getText());
 			for(int i=0; i<2; i++) {
 				if(addOption.btnG1[i].isSelected()) temp = addOption.btnG1[i].getText();

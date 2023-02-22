@@ -1,7 +1,7 @@
 import javax.swing.JButton;
 
 public class OrderListButton {
-  static JButton orderlistbutton = new JButton("ì£¼ë¬¸ë‚´ì—­");
+  static JButton orderlistbutton = new JButton("ÁÖ¹®³»¿ª");
   
   
 

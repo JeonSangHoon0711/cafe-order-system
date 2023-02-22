@@ -23,8 +23,6 @@ class MyFrame extends JFrame{
 		stmt = con.createStatement();
 		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
 		rs = stmt.executeQuery(str);
-		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
-		rs = stmt.executeQuery(str);
 		setLayout(new GridLayout(0, 2));
 		add(new JLabel("ID", JLabel.CENTER));
 		add(id = new JTextField(""));
@@ -100,14 +98,6 @@ public class CafeOrderSystem {
 	
 	public static void main(String[] args) throws SQLException{
 		OrderPage OrderPage = new OrderPage();
-		// Thread t = new Thread(new Runnable() {
-		// 	MyFrame asdf = new MyFrame();
-    //         @Override
-    //         public void run() {
-    //             // 여기에서 함수 호출...
-    //         }
-    //     });
-		
 	}
 
 }

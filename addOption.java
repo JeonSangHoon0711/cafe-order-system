@@ -10,33 +10,18 @@ import javax.swing.ImageIcon;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 
-<<<<<<< Updated upstream
-public class addOption extends JFrame {
-
-=======
->>>>>>> Stashed changes
 public class addOption extends JFrame {
 
 	public static Container c;
 	public static label lab, img, menu, cnt1, price, cnt2, cnt3, cnt4;
 	public static button add1, add2, add3, add4, minus1, minus2, minus3, minus4, cancel, finish;
 	public static toggleButton[] btnG1 = new toggleButton[2], btnG2 = new toggleButton[3];
-<<<<<<< Updated upstream
-	public static toggleButton[] btnG1 = new toggleButton[2], btnG2 = new toggleButton[3];
-	public static ButtonGroup tempG, sizeG;
-	public static int coffeePrice = 5000, optionPrice = 0;
-	public static String[] menuName = { "아메리카노", "카푸치노", "카페라떼", "초콜릿모카", "돌체리떼", "콜드브루" };
-	public static ImageIcon plus = new ImageIcon("imgs//plus.png"),
-			minus = new ImageIcon("imgs//minus.png");
-	public static String testtall = "";
-=======
 	public static ButtonGroup tempG, sizeG;
 	public static int coffeePrice = 0, optionPrice = 0, selected = 0;
 	public static String[] menuName = { "아메리카노", "카페라떼", "카푸치노", "초콜릿모카", "콜드브루", "돌체라떼" };
 	public static ImageIcon plus = new ImageIcon("imgs//plus.png"), minus = new ImageIcon("imgs//minus.png");
 	public static boolean loading = false; 
 	
->>>>>>> Stashed changes
 	public addOption(int selectedMenu) {
 		Image americanoimage = null;
     Image cafelatteimage = null;
@@ -102,14 +87,9 @@ public class addOption extends JFrame {
 		setSize(500, 800);
 		setVisible(true);
 		c.setBackground(Color.WHITE);
-<<<<<<< Updated upstream
-
-		menu = new label(menuName[selectedMenu], 200, 20, 200, 100);
-=======
 		
 		selected = selectedMenu;
 		menu = new label(menuName[selected], 200, 20, 200, 100);
->>>>>>> Stashed changes
 		c.add(menu);
 		menu.setFont(new Font("굴림", Font.BOLD, 20));
 		img = new label("img", 50, 50, 130, 130, menuImgs[selectedMenu]);

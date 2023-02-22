@@ -10,8 +10,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 
 public class OrderPage {
-  static JFrame OrderFrame = new JFrame();
+  JFrame OrderFrame = new JFrame();
   UnderPanel underpanel = new UnderPanel();
+  OrderListButton temporder = new OrderListButton();
   // AmericanoButton americanoButton = new AmericanoButton();
   
   public OrderPage() {
@@ -82,16 +83,31 @@ public class OrderPage {
     coldbrewButton.setBounds(80, 370, 130, 130);
     dolcelatteButton.setBounds(260, 370, 130, 130);
     
+    
+    
     OrderFrame.add(UnderPanel.pricelabel);
     OrderFrame.add(UnderPanel.orderlistPane);
     OrderFrame.add(UnderPanel.underpanel);
     OrderFrame.add(UnderPanel.orderbutton);
+    OrderFrame.add(OrderListButton.orderlistbutton);
     OrderFrame.getContentPane().add(americanoButton);
     OrderFrame.getContentPane().add(cafelatteButton);
     OrderFrame.getContentPane().add(cappuccinoButton);
     OrderFrame.getContentPane().add(chocolatemochaButton);
     OrderFrame.getContentPane().add(coldbrewButton);
     OrderFrame.getContentPane().add(dolcelatteButton);
+    
+    
+    while(true){
+      OrderFrame.repaint();
+      try {
+        Thread.sleep(10000);
+      } catch (InterruptedException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+      UnderPanel.orderlistTextArea.append("test\n");
+    }
 
   }
 

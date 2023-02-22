@@ -10,9 +10,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 
 public class OrderPage {
+<<<<<<< Updated upstream
   JFrame OrderFrame = new JFrame();
   UnderPanel underpanel = new UnderPanel();
   OrderListButton temporder = new OrderListButton();
+=======
+  static JFrame OrderFrame = new JFrame();
+  UnderPanel underpanel = new UnderPanel();
+>>>>>>> Stashed changes
   // AmericanoButton americanoButton = new AmericanoButton();
   
   public OrderPage() {
@@ -83,19 +88,21 @@ public class OrderPage {
     coldbrewButton.setBounds(80, 370, 130, 130);
     dolcelatteButton.setBounds(260, 370, 130, 130);
     
-    
-    
     OrderFrame.add(UnderPanel.pricelabel);
     OrderFrame.add(UnderPanel.orderlistPane);
     OrderFrame.add(UnderPanel.underpanel);
     OrderFrame.add(UnderPanel.orderbutton);
+<<<<<<< Updated upstream
     OrderFrame.add(OrderListButton.orderlistbutton);
+=======
+>>>>>>> Stashed changes
     OrderFrame.getContentPane().add(americanoButton);
     OrderFrame.getContentPane().add(cafelatteButton);
     OrderFrame.getContentPane().add(cappuccinoButton);
     OrderFrame.getContentPane().add(chocolatemochaButton);
     OrderFrame.getContentPane().add(coldbrewButton);
     OrderFrame.getContentPane().add(dolcelatteButton);
+<<<<<<< Updated upstream
     
     
     while(true){
@@ -108,6 +115,8 @@ public class OrderPage {
       }
       UnderPanel.orderlistTextArea.append("test\n");
     }
+=======
+>>>>>>> Stashed changes
 
   }
 

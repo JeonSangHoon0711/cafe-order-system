@@ -95,8 +95,6 @@ class MyFrame extends JFrame{
 }
 
 
-
-public class CafeOrderSystem {
 public class CafeOrderSystem {
 	
 	

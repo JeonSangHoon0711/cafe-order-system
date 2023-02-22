@@ -42,9 +42,37 @@ public class DB {
     } catch (Exception e) {
       System.out.println("Board데이터 삽입 실패!");
     }
-    addOption.testtall = rs.getString("Tall");
+
     System.out.println(rs.getString(num));
     return rs.getString(num);
+  }
+
+
+  
+  public void insert(String str){
+    String sql = "insert into orderhistory values(?)";
+        
+    PreparedStatement pstmt = null;
+    try {
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1,str);
+        
+        int result = pstmt.executeUpdate();
+        if(result==1) {
+            System.out.println("데이터 삽입 성공!");
+            
+        }
+        
+    } catch (Exception e) {
+        System.out.println("데이터 삽입 실패!");
+    }    finally {
+        try {
+            if(pstmt!=null && !pstmt.isClosed()) {
+                pstmt.close();
+            }
+        } catch (Exception e2) {}
+    }
+
   }
 
 

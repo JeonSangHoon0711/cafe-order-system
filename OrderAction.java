@@ -6,7 +6,7 @@ class outListener implements ActionListener{
 
 
 	public void actionPerformed(ActionEvent e) {
-      db.insert();
+      db.insert("test");
 		}
 
 	}

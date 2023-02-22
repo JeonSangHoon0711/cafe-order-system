@@ -21,18 +21,11 @@ class MyFrame extends JFrame{
 		super("Database Viewer");
 		Connection con = makeConnection();
 		stmt = con.createStatement();
-<<<<<<< Updated upstream
-		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
-		rs = stmt.executeQuery(str);
-		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
-		rs = stmt.executeQuery(str);
-=======
 		rs = stmt.executeQuery("SELECT * FROM coffee");
 
 		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
 		rs = stmt.executeQuery(str);
 
->>>>>>> Stashed changes
 		setLayout(new GridLayout(0, 2));
 		add(new JLabel("ID", JLabel.CENTER));
 		add(id = new JTextField(""));
@@ -103,11 +96,6 @@ class MyFrame extends JFrame{
 }
 
 
-<<<<<<< Updated upstream
-
-public class CafeOrderSystem {
-=======
->>>>>>> Stashed changes
 public class CafeOrderSystem {
 	
 	

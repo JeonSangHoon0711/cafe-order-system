@@ -23,8 +23,6 @@ public class addOption extends JFrame {
 	public static boolean loading = false; 
 	
 	public addOption(int selectedMenu) {
-	connectDB con = new connectDB();	
-		
 		Image americanoimage = null;
     Image cafelatteimage = null;
     Image cappuccinoimage = null;
@@ -103,7 +101,6 @@ public class addOption extends JFrame {
 		minus1 = new button(300, 150, 30, 30, minus);
 		c.add(minus1);
 		
-		coffeePrice = con.readCoffeePrice(menuName[selected]);
 		price = new label(coffeePrice + "", 350, 150, 100, 30);
 		c.add(price);
 

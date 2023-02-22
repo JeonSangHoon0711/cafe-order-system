@@ -21,7 +21,8 @@ class MyFrame extends JFrame{
 		super("Database Viewer");
 		Connection con = makeConnection();
 		stmt = con.createStatement();
-		rs = stmt.executeQuery("SELECT * FROM coffee");
+		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
+		rs = stmt.executeQuery(str);
 		setLayout(new GridLayout(0, 2));
 		add(new JLabel("ID", JLabel.CENTER));
 		add(id = new JTextField(""));
@@ -41,7 +42,7 @@ class MyFrame extends JFrame{
 			public void actionPerformed(ActionEvent event) {
 				try {
 					rs.previous();
-					System.out.println(rs.getString("name"));
+					System.out.println(rs.getString("Tall"));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -53,7 +54,7 @@ class MyFrame extends JFrame{
 			public void actionPerformed(ActionEvent event) {
 				try {
 					rs.next();
-					System.out.println(rs.getString("name"));
+					System.out.println(rs.getString("Tall"));
 					
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -64,7 +65,7 @@ class MyFrame extends JFrame{
 		add(nextButton);
 		add(previousButton);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(350,200);
+		setSize(500,800);
 		setVisible(true);
 		
 	}
@@ -90,17 +91,18 @@ class MyFrame extends JFrame{
 
 
 
-public class App {
+public class CafeOrderSystem {
 	
 	
 	public static void main(String[] args) throws SQLException{
-		Thread t = new Thread(new Runnable() {
-			MyFrame asdf = new MyFrame();
-            @Override
-            public void run() {
-                // 여기에서 함수 호출...
-            }
-        });
+		OrderPage OrderPage = new OrderPage();
+		// Thread t = new Thread(new Runnable() {
+		// 	MyFrame asdf = new MyFrame();
+    //         @Override
+    //         public void run() {
+    //             // 여기에서 함수 호출...
+    //         }
+    //     });
 		
 	}
 

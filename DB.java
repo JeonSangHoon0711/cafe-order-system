@@ -8,21 +8,21 @@ import java.sql.Statement;
 
 public class DB {
 
-  private Connection conn; // DB 커넥션 연결 객체
-  private static final String USERNAME = "root";// DBMS접속 시 아이디
-  private static final String PASSWORD = "";// DBMS접속 시 비밀번호
-  private static final String URL = "jdbc:mysql://localhost/cafe_db";// DBMS접속할 db명
+  private Connection conn;
+  private static final String USERNAME = "root";
+  private static final String PASSWORD = "";
+  private static final String URL = "jdbc:mysql://localhost/cafe_db";
   ResultSet rs;
   Statement stmt;
 
   public DB() {
     try {
-      System.out.println("생성자");
+      System.out.println("�깮�꽦�옄");
       Class.forName("com.mysql.cj.jdbc.Driver");
       conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
       System.out.println("드라이버 로딩 성공");
     } catch (Exception e) {
-      System.out.println("드라이버 로딩 실패 ");
+      System.out.println("드라이버 로딩 실패");
       try {
         conn.close();
       } catch (SQLException e1) {
@@ -32,19 +32,16 @@ public class DB {
 
   }
 
-  public String getcoffee(String coffee , int num) throws SQLException {
-    // 쿼리문 준비
+  public int getcoffee(String coffee , int num) throws SQLException {
     try {
       stmt = conn.createStatement();
       String str = "SELECT * FROM coffee WHERE Name = " + coffee;
       rs = stmt.executeQuery(str);
       rs.next();
     } catch (Exception e) {
-      System.out.println("Board데이터 삽입 실패!");
+      System.out.println("Board 데이터 삽입 실패!");
     }
-    addOption.testtall = rs.getString("Tall");
-    System.out.println(rs.getString(num));
-    return rs.getString(num);
+    return rs.getInt(num);
   }
 
 

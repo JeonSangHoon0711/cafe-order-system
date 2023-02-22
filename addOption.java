@@ -4,6 +4,7 @@ import java.awt.Container;
 import java.awt.Font;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -17,12 +18,15 @@ public class addOption extends JFrame {
 	public static button add1, add2, add3, add4, minus1, minus2, minus3, minus4, cancel, finish;
 	public static toggleButton[] btnG1 = new toggleButton[2], btnG2 = new toggleButton[3];
 	public static ButtonGroup tempG, sizeG;
-	public static int coffeePrice = 0, optionPrice = 0, selected = 0;
+	public static int coffeePrice = 0, optionPrice = 0;
+	public static String name="";
 	public static String[] menuName = { "아메리카노", "카페라떼", "카푸치노", "초콜릿모카", "콜드브루", "돌체라떼" };
 	public static ImageIcon plus = new ImageIcon("imgs//plus.png"), minus = new ImageIcon("imgs//minus.png");
 	public static boolean loading = false; 
 	
 	public addOption(int selectedMenu) {
+		DB db = new DB();
+		
 		Image americanoimage = null;
     Image cafelatteimage = null;
     Image cappuccinoimage = null;
@@ -88,8 +92,8 @@ public class addOption extends JFrame {
 		setVisible(true);
 		c.setBackground(Color.WHITE);
 		
-		selected = selectedMenu;
-		menu = new label(menuName[selected], 200, 20, 200, 100);
+		name = menuName[selectedMenu];
+		menu = new label(name, 200, 20, 200, 100);
 		c.add(menu);
 		menu.setFont(new Font("굴림", Font.BOLD, 20));
 		img = new label("img", 50, 50, 130, 130, menuImgs[selectedMenu]);
@@ -101,6 +105,12 @@ public class addOption extends JFrame {
 		minus1 = new button(300, 150, 30, 30, minus);
 		c.add(minus1);
 		
+		try {
+			coffeePrice = db.getcoffee(addOption.name, 2);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		price = new label(coffeePrice + "", 350, 150, 100, 30);
 		c.add(price);
 

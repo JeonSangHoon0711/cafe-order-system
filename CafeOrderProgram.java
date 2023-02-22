@@ -6,7 +6,7 @@ public class CafeOrderProgram {
       db.getcoffee("'아메리카노'",2);
       db.insert("테스트");
       
-      // OrderPage OrderPage = new OrderPage();
+      OrderPage OrderPage = new OrderPage();
   }
   
 }

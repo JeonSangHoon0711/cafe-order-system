@@ -1,19 +1,17 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
-import javax.xml.crypto.Data;
-
-/*
 public class connectDB {
-	Connection conn = null;
-	ResultSet rs = null;
-	Statement st = null;
-	PreparedStatement ps = null;
+	public static Connection conn = null;
+	public static ResultSet rs = null;
+	public static Statement st = null;
+	public static PreparedStatement ps = null;
+	static int price = 0;
 	
 	public connectDB() {
 		try {
@@ -32,7 +30,7 @@ public class connectDB {
 		}
 	}
 	
-	public void dbClose() {
+	public static void dbClose() {
 		try {
 			if (rs != null) rs.close();
 			if (st != null) st.close();
@@ -42,37 +40,18 @@ public class connectDB {
 		}
 	}
 	
-	public void insert(Data data) {
-		try {
-			String sql = "INSERT INTO //CRUD_TABLE(name, age) values(?, ?)";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, data.menu);
-			ps.setInt(2, data.age);
-			ps.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			dbClose();
-		}
-	}
-	
-	public ArrayList<Data> read() {
-		ArrayList<Data> arr = new ArrayList<Data>();
-		System.out.println(arr);
+	public static int readCoffeePrice(String name) {
+		System.out.println(price);
 		try {
 			st = conn.createStatement();
-			String sql = "SELECT * FROM //CRUD_TABLE ORDER BY AGE ASC";
+			String sql = "SELECT * FROM addoption ORDER BY "+name+" ASC";
 			rs = st.executeQuery(sql);
-			while (rs.next()) {
-				arr.add(new Data(rs.getString(1), rs.getInt(2)));
-			}
+			price = rs.getInt(2);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			dbClose();
 		}
-		return arr;
+		return price;
 	}
-	
 }
-*/

@@ -23,6 +23,8 @@ class MyFrame extends JFrame{
 		stmt = con.createStatement();
 		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
 		rs = stmt.executeQuery(str);
+		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
+		rs = stmt.executeQuery(str);
 		setLayout(new GridLayout(0, 2));
 		add(new JLabel("ID", JLabel.CENTER));
 		add(id = new JTextField(""));
@@ -34,7 +36,7 @@ class MyFrame extends JFrame{
 		add(year = new JTextField(""));
 		add(new JLabel("PRICE", JLabel.CENTER));
 		add(price = new JTextField(""));	
-		add(new JLabel("저자 검색", JLabel.CENTER));
+		add(new JLabel("���옄 寃��깋", JLabel.CENTER));
 		add(author = new JTextField(""));
 		
 		previousButton = new JButton("Previous");
@@ -42,6 +44,7 @@ class MyFrame extends JFrame{
 			public void actionPerformed(ActionEvent event) {
 				try {
 					rs.previous();
+					System.out.println(rs.getString("Tall"));
 					System.out.println(rs.getString("Tall"));
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -55,6 +58,7 @@ class MyFrame extends JFrame{
 				try {
 					rs.next();
 					System.out.println(rs.getString("Tall"));
+					System.out.println(rs.getString("Tall"));
 					
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -65,6 +69,7 @@ class MyFrame extends JFrame{
 		add(nextButton);
 		add(previousButton);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(500,800);
 		setSize(500,800);
 		setVisible(true);
 		
@@ -80,7 +85,7 @@ class MyFrame extends JFrame{
 			con = DriverManager.getConnection(url, id, password);
 			System.out.println("db연결성공");
 		} catch (ClassNotFoundException e) {
-			System.out.println("드라이버찾을수없음");
+			System.out.println("드라이버를찾을수없음");
 		} catch (SQLException e) {
 			System.out.println("연결실패");
 		}
@@ -91,6 +96,7 @@ class MyFrame extends JFrame{
 
 
 
+public class CafeOrderSystem {
 public class CafeOrderSystem {
 	
 	

@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class connectDB {
-	public Connection conn = null;
-	public ResultSet rs = null;
-	public Statement st = null;
-	public PreparedStatement ps = null;
+	public static Connection conn = null;
+	public static ResultSet rs = null;
+	public static Statement st = null;
+	public static PreparedStatement ps = null;
 	static int price = 0;
 	
 	public connectDB() {
@@ -18,7 +18,7 @@ public class connectDB {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			String user = "newuser";
 			String pw = "1q2w3e4r!";
-			String url = "jdbc:mysql://192.168.0.124/cafe_db";
+			String url = "jdbc:mysql://localhost:3306/cafe_db";
 			conn = DriverManager.getConnection(url, user, pw);
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("DB 드라이버 로딩 실패 :" + cnfe.toString());

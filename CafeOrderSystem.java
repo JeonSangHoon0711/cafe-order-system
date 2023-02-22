@@ -21,8 +21,11 @@ class MyFrame extends JFrame{
 		super("Database Viewer");
 		Connection con = makeConnection();
 		stmt = con.createStatement();
+
+
 		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
 		rs = stmt.executeQuery(str);
+
 		setLayout(new GridLayout(0, 2));
 		add(new JLabel("ID", JLabel.CENTER));
 		add(id = new JTextField(""));

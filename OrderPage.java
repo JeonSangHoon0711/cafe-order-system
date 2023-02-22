@@ -86,12 +86,15 @@ public class OrderPage {
     OrderFrame.add(UnderPanel.orderlistPane);
     OrderFrame.add(UnderPanel.underpanel);
     OrderFrame.add(UnderPanel.orderbutton);
+
     OrderFrame.add(OrderListButton.orderlistbutton);
+
     OrderFrame.getContentPane().add(americanoButton);
     OrderFrame.getContentPane().add(cafelatteButton);
     OrderFrame.getContentPane().add(cappuccinoButton);
     OrderFrame.getContentPane().add(chocolatemochaButton);
     OrderFrame.getContentPane().add(coldbrewButton);
     OrderFrame.getContentPane().add(dolcelatteButton); 
+
   }
 }

@@ -7,20 +7,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DB {
-
-  private Connection conn; // DB 커넥션 연결 객체
-  final String USERNAME = "root";// DBMS접속 시 아이디
-  final String PASSWORD = "";// DBMS접속 시 비밀번호
-  final String URL = "jdbc:mysql://localhost:3306/cafe_db";// DBMS접속할 db명
+  private Connection conn;
+  final String USERNAME = "root";
+  final String PASSWORD = "";
+  final String URL = "jdbc:mysql://localhost:3306/cafe_db";
   ResultSet rs;
   Statement stmt;
 
   public DB() {
     try {
-      System.out.println("�깮�꽦�옄");
       Class.forName("com.mysql.cj.jdbc.Driver");
       conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-      System.out.println("드라이버 로딩 성공");
     } catch (Exception e) {
       System.out.println("드라이버 로딩 실패");
       try {
@@ -28,12 +25,9 @@ public class DB {
       } catch (SQLException e1) {
       }
     }
-    
-
   }
 
-  public Integer getcoffee(String coffee , int num) throws SQLException {
-    // 쿼리문 준비
+  public int getcoffee(String coffee , int num) throws SQLException {
     try {
       stmt = conn.createStatement();
       String str = "SELECT * FROM coffee WHERE Name = " + "'" +coffee + "'";
@@ -42,7 +36,6 @@ public class DB {
     } catch (Exception e) {
       System.out.println("Board 데이터 삽입 실패!");
     }
-
     return rs.getInt(num);
   }
 
@@ -64,30 +57,19 @@ public class DB {
 
   
   public void insert(String str){
-    String sql = "insert into orderhistory values(?)";
-        
+    String sql = "insert into orderhistory values(?)";     
     PreparedStatement pstmt = null;
     try {
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1,str);
-        
         int result = pstmt.executeUpdate();
-        if(result==1) {
-            System.out.println("데이터 삽입 성공!");
-            
-        }
-        
+        if(result==1) System.out.println("데이터 삽입 성공!");
     } catch (Exception e) {
         System.out.println("데이터 삽입 실패!");
-    }    finally {
+    } finally {
         try {
-            if(pstmt!=null && !pstmt.isClosed()) {
-                pstmt.close();
-            }
+            if(pstmt!=null && !pstmt.isClosed()) pstmt.close();
         } catch (Exception e2) {}
     }
-
   }
-
-
 }

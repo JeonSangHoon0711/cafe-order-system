@@ -1,15 +1,10 @@
 import javax.swing.JButton;
 
 public class OrderhistoryButton {
-  static JButton orderlistbutton = new JButton("ì „ì²´ì£¼ë¬¸ë‚´ì—­");
-  
-  
+  static JButton orderlistbutton = new JButton("ÁÖ¹® ³»¿ª");
 
   public OrderhistoryButton(){
-    
-    orderlistbutton.setBounds(0,0,70,40);
+    orderlistbutton.setBounds(385,5,95,30);
     orderlistbutton.addActionListener(new OrderhistoryAction());
   }
-
-  
 }

@@ -26,7 +26,6 @@ public class addOption extends JFrame {
 	
 	public addOption(int selectedMenu) {
 		DB db = new DB();
-		
 
 		Image americanoimage = null, cafelatteimage = null, cappuccinoimage = null;
 		Image chocolatemochaimage = null, coldbrewimage = null, dolcelatteimage = null;
@@ -107,6 +106,7 @@ public class addOption extends JFrame {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
+		
 		price = new label(coffeePrice + "", 350, 150, 100, 30);
 		c.add(price);
 

@@ -20,13 +20,13 @@ public class UnderPanel {
     underpanel.setBounds(10, 580, 465, 170);
     underpanel.setBackground(new Color(100,100,100));
     
+    orderlistTextArea.setEditable(false);
     orderlistPane.setViewportView(orderlistTextArea);
     orderlistPane.setBounds(20, 590 ,300,100);
     
-    
     orderbutton.setBounds(330,590,135,135);
     orderbutton.addActionListener(new MenuOrderAction());
-    pricelabel.setBounds(20,700,300,50);
+    pricelabel.setBounds(20,695,300,50);
     pricelabel.setFont(new Font("맑은 고딕", Font.BOLD,20));
   }
 

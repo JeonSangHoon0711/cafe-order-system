@@ -4,13 +4,12 @@ import java.awt.event.ActionListener;
 class MenuOrderAction implements ActionListener{
 	DB db = new DB();
 
-
 	public void actionPerformed(ActionEvent e) {
-    while (!OrderStack.OrderStack.isEmpty()) {
+		
+		while (!OrderStack.OrderStack.isEmpty()) {
 			db.insert(OrderStack.OrderStack.pop());
-		}  
-
+		} 
+		
 		UnderPanel.orderlistTextArea.setText("");
-		}
-
 	}
+}

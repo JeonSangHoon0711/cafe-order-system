@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
+import java.awt.Color;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -10,6 +11,7 @@ public class OrderPage {
   static JFrame OrderFrame = new JFrame();
   UnderPanel underpanel = new UnderPanel();
   OrderhistoryButton orderbutton = new OrderhistoryButton();
+  label lab;
   
   public OrderPage() {
     
@@ -17,6 +19,7 @@ public class OrderPage {
     OrderFrame.setVisible(true);
     OrderFrame.setDefaultCloseOperation(OrderFrame.EXIT_ON_CLOSE);
     OrderFrame.setLayout(null);
+    OrderFrame.getContentPane().setBackground(Color.white);
     
     Image americanoimage = null;
     Image cafelatteimage = null;
@@ -70,18 +73,31 @@ public class OrderPage {
     coldbrewButton.addActionListener(new CoffeeListener(4));
     dolcelatteButton.addActionListener(new CoffeeListener(5));
 
-    americanoButton.setBounds(80, 10, 130, 130);
-    cafelatteButton.setBounds(260, 10, 130, 130);
-    cappuccinoButton.setBounds(80, 190, 130, 130);
-    chocolatemochaButton.setBounds(260, 190, 130, 130);
-    coldbrewButton.setBounds(80, 370, 130, 130);
-    dolcelatteButton.setBounds(260, 370, 130, 130); 
+    americanoButton.setBounds(80, 45, 130, 130);
+    cafelatteButton.setBounds(260, 45, 130, 130);
+    cappuccinoButton.setBounds(80, 220, 130, 130);
+    chocolatemochaButton.setBounds(260, 220, 130, 130);
+    coldbrewButton.setBounds(80, 395, 130, 130);
+    dolcelatteButton.setBounds(260, 395, 130, 130); 
+    
+    lab = new label("아메리카노", 90, 175, 100, 30);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("카페라떼", 280, 175, 100, 30);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("카푸치노", 95, 350, 100, 30);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("초콜릿모카", 275, 350, 100, 30);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("콜드브루", 95, 525, 100, 30);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("돌체라떼", 280, 525, 100, 30);
+    OrderFrame.getContentPane().add(lab);
     
     OrderFrame.add(UnderPanel.pricelabel);
     OrderFrame.add(UnderPanel.orderlistPane);
-    OrderFrame.add(UnderPanel.underpanel);
     OrderFrame.add(UnderPanel.orderbutton);
     OrderFrame.add(OrderhistoryButton.orderlistbutton);
+    OrderFrame.add(UnderPanel.underpanel);
     OrderFrame.getContentPane().add(americanoButton);
     OrderFrame.getContentPane().add(cafelatteButton);
     OrderFrame.getContentPane().add(cappuccinoButton);

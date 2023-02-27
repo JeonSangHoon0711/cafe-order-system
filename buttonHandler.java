@@ -51,9 +51,9 @@ public class buttonHandler implements ActionListener {
 				addOption.optionPrice-=500;
 				addOption.price.setText((addOption.coffeePrice+addOption.optionPrice)*
 						Integer.parseInt(addOption.cnt1.getText())+"");}
-		}else if(btn.getText()=="√Îº“") {
+		}else if(btn.getText()=="Ï∑®ÏÜå") {
 			CoffeeListener.optionFrame.dispose();
-		}else if(btn.getText()=="º±≈√øœ∑·") {
+		}else if(btn.getText()=="ÏÑ†ÌÉùÏôÑÎ£å") {
 			menu = addOption.name;
 			num = Integer.parseInt(addOption.cnt1.getText());
 			for(int i=0; i<2; i++) {
@@ -67,7 +67,8 @@ public class buttonHandler implements ActionListener {
 			shot = Integer.parseInt(addOption.cnt4.getText());
 			price = Integer.parseInt(addOption.price.getText());
 			history = new Data(menu, num, temp, size, whipping, syrup, shot, price);
-			UnderPanel.orderlistTextArea.append("∏ﬁ¥∫∏Ì: "+menu+" ºˆ∑Æ: "+num+"∞≥ ∞°∞›: "+price+"\n");
+			UnderPanel.orderlistTextArea.append("Î©îÎâ¥Î™Ö: "+menu+" ÏàòÎüâ: "+num+"Í∞ú Í∞ÄÍ≤©: "+price+"\n");
+			OrderStack.OrderStack.add("Î©îÎâ¥Î™Ö : " + temp + menu + " / ÏÇ¨Ïù¥Ï¶à : "+ size +" / ÌúòÌïë : " + whipping + " Î≤à " + "/ ÏãúÎüΩ : " + syrup + " Î≤à " + "/ ÏàòÎüâ : "+num+ " Í∞ú / Í∞ÄÍ≤©: "+price+"\n");
 			OrderPage.OrderFrame.repaint();
 			CoffeeListener.optionFrame.dispose();
 		}

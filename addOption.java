@@ -23,9 +23,9 @@ public class addOption extends JFrame {
 	public static String[] menuName = { "아메리카노", "카페라떼", "카푸치노", "초콜릿모카", "콜드브루", "돌체라떼" };
 	public static ImageIcon plus = new ImageIcon("imgs//plus.png"), minus = new ImageIcon("imgs//minus.png");
 	public static boolean loading = false; 
+	DB db = new DB();
 	
-	public addOption(int selectedMenu) {
-		DB db = new DB();
+	public addOption(int selectedMenu) throws SQLException {
 		
 		Image americanoimage = null;
     Image cafelatteimage = null;

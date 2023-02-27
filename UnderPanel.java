@@ -24,8 +24,9 @@ public class UnderPanel {
     orderlistPane.setViewportView(orderlistTextArea);
     orderlistPane.setBounds(20, 590 ,300,100);
     
-    orderbutton.setBounds(330,590,135,135);
     
+    orderbutton.setBounds(330,590,135,135);
+    orderbutton.addActionListener(new MenuOrderAction());
     pricelabel.setBounds(20,700,300,50);
     pricelabel.setFont(new Font("맑은 고딕", Font.BOLD,20));
   }

@@ -9,9 +9,9 @@ import java.sql.Statement;
 public class DB {
 
   private Connection conn; // DB 커넥션 연결 객체
-  private static final String USERNAME = "root";// DBMS접속 시 아이디
-  private static final String PASSWORD = "";// DBMS접속 시 비밀번호
-  private static final String URL = "jdbc:mysql://localhost/cafe_db";// DBMS접속할 db명
+  final String USERNAME = "root";// DBMS접속 시 아이디
+  final String PASSWORD = "";// DBMS접속 시 비밀번호
+  final String URL = "jdbc:mysql://localhost:3306/cafe_db";// DBMS접속할 db명
   ResultSet rs;
   Statement stmt;
 
@@ -32,21 +32,36 @@ public class DB {
 
   }
 
-  public String getcoffee(String coffee , int num) throws SQLException {
+  public int getcoffee(String coffee , int num) throws SQLException {
     // 쿼리문 준비
     try {
       stmt = conn.createStatement();
-      String str = "SELECT * FROM coffee WHERE Name = " + coffee;
+      String str = "SELECT * FROM coffee WHERE Name = " + "'" +coffee + "'";
       rs = stmt.executeQuery(str);
       rs.next();
     } catch (Exception e) {
       System.out.println("Board데이터 삽입 실패!");
     }
 
-    System.out.println(rs.getString(num));
-    return rs.getString(num);
+    System.out.println(rs.getInt(num));
+    return rs.getInt(num);
   }
 
+  public String gethistory(){
+    String historystr ="";
+    try {
+      stmt = conn.createStatement();
+      String tempstr = "SELECT * FROM orderhistory";
+      rs = stmt.executeQuery(tempstr);
+      rs.next();
+      while(rs.next()){
+        historystr += rs.getString(1) + "\n";
+      }
+    } catch (Exception e) {
+      System.out.println("Board데이터 삽입 실패!");
+    }
+    return historystr;
+  }
 
   
   public void insert(String str){

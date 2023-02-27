@@ -12,6 +12,7 @@ import java.awt.Color;
 public class OrderPage {
   static JFrame OrderFrame = new JFrame();
   UnderPanel underpanel = new UnderPanel();
+  OrderhistoryButton orderbutton = new OrderhistoryButton();
   // AmericanoButton americanoButton = new AmericanoButton();
   
   public OrderPage() {
@@ -86,7 +87,7 @@ public class OrderPage {
     OrderFrame.add(UnderPanel.orderlistPane);
     OrderFrame.add(UnderPanel.underpanel);
     OrderFrame.add(UnderPanel.orderbutton);
-    OrderFrame.add(OrderListButton.orderlistbutton);
+    OrderFrame.add(OrderhistoryButton.orderlistbutton);
     OrderFrame.getContentPane().add(americanoButton);
     OrderFrame.getContentPane().add(cafelatteButton);
     OrderFrame.getContentPane().add(cappuccinoButton);
@@ -103,6 +104,7 @@ public class OrderPage {
         // TODO Auto-generated catch block
         e.printStackTrace();
       }
+      System.out.println(OrderStack.OrderStack);
       UnderPanel.orderlistTextArea.append("test\n");
     }
 

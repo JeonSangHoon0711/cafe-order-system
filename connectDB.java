@@ -21,9 +21,9 @@ public class connectDB {
 			String url = "jdbc:mysql://localhost:3306/cafe_db";
 			conn = DriverManager.getConnection(url, user, pw);
 		} catch (ClassNotFoundException cnfe) {
-			System.out.println("DB µå¶óÀÌ¹ö ·Îµù ½ÇÆÐ :" + cnfe.toString());
+			System.out.println("DB ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ :" + cnfe.toString());
 		} catch (SQLException sqle) {
-			System.out.println("DB Á¢¼Ó½ÇÆÐ : " + sqle.toString());
+			System.out.println("DB ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½ : " + sqle.toString());
 		} catch (Exception e) {
 			System.out.println("Unkonwn error");
 			e.printStackTrace();

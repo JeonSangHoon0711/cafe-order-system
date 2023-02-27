@@ -4,17 +4,14 @@ import java.sql.SQLException;
 
 import javax.swing.JFrame;
 
-class CoffeeListener implements ActionListener {
+class OrderhistoryAction implements ActionListener {
   int number = 0;
-  static JFrame optionFrame;
+  JFrame historyframe;
   
-  public CoffeeListener(int number){
-    this.number = number;
-  }
   
   public void actionPerformed(ActionEvent e) {
     try {
-      optionFrame = new addOption(number);
+      historyframe = new Orderhistoryframe();
     } catch (SQLException e1) {
       // TODO Auto-generated catch block
       e1.printStackTrace();

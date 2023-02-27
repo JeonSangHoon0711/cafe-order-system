@@ -23,18 +23,15 @@ public class addOption extends JFrame {
 	public static String[] menuName = { "아메리카노", "카페라떼", "카푸치노", "초콜릿모카", "콜드브루", "돌체라떼" };
 	public static ImageIcon plus = new ImageIcon("imgs//plus.png"), minus = new ImageIcon("imgs//minus.png");
 	public static boolean loading = false; 
-	DB db = new DB();
 	
-	public addOption(int selectedMenu) throws SQLException {
+	public addOption(int selectedMenu) {
+		DB db = new DB();
 		
-		Image americanoimage = null;
-    Image cafelatteimage = null;
-    Image cappuccinoimage = null;
-    Image chocolatemochaimage = null;
-    Image coldbrewimage = null;
-    Image dolcelatteimage = null;
-		Image plusimage = null;
-		Image minusimage = null;
+
+		Image americanoimage = null, cafelatteimage = null, cappuccinoimage = null;
+		Image chocolatemochaimage = null, coldbrewimage = null, dolcelatteimage = null;
+		Image plusimage = null, minusimage = null;
+
     try {
 			URL url = new URL("https://github.com/JeonSangHoon0711/cafe-order-system-image/blob/main/Americano.jpg?raw=true");
       americanoimage = ImageIO.read(url);
@@ -108,7 +105,6 @@ public class addOption extends JFrame {
 		try {
 			coffeePrice = db.getcoffee(addOption.name, 2);
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		price = new label(coffeePrice + "", 350, 150, 100, 30);

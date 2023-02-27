@@ -7,7 +7,7 @@ public class OrderListButton {
 
   public OrderListButton(){
     
-    orderlistbutton.setBounds(0,0,100,50);
+    orderlistbutton.setBounds(395,5,85,30);
     
   }
 

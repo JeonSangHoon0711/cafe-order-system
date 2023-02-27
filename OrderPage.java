@@ -5,18 +5,13 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.border.Border;
-import java.awt.BorderLayout;
-import java.awt.Color;
 
 public class OrderPage {
   static JFrame OrderFrame = new JFrame();
   UnderPanel underpanel = new UnderPanel();
   OrderhistoryButton orderbutton = new OrderhistoryButton();
-  // AmericanoButton americanoButton = new AmericanoButton();
   
   public OrderPage() {
-
     
     OrderFrame.setSize(500, 800);
     OrderFrame.setVisible(true);
@@ -29,7 +24,6 @@ public class OrderPage {
     Image chocolatemochaimage = null;
     Image coldbrewimage = null;
     Image dolcelatteimage = null;
-
 
     try {
       URL url = new URL("https://github.com/JeonSangHoon0711/cafe-order-system-image/blob/main/Americano.jpg?raw=true");

@@ -97,18 +97,7 @@ class MyFrame extends JFrame{
 
 
 public class CafeOrderSystem {
-	
-	
 	public static void main(String[] args) throws SQLException{
 		OrderPage OrderPage = new OrderPage();
-		// Thread t = new Thread(new Runnable() {
-		// 	MyFrame asdf = new MyFrame();
-    //         @Override
-    //         public void run() {
-    //             // 여기에서 함수 호출...
-    //         }
-    //     });
-		
 	}
-
 }

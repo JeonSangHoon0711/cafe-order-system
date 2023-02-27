@@ -1,6 +1,5 @@
 import java.awt.Color;
 import java.awt.Font;
-import java.net.http.WebSocket.Listener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -31,11 +30,6 @@ public class UnderPanel {
     pricelabel.setFont(new Font("맑은 고딕", Font.BOLD,20));
   }
 
-  
-
-
-
-
   public JScrollPane getorderlist(){
     return orderlistPane;
   }
@@ -48,6 +42,5 @@ public class UnderPanel {
   public JLabel getpricelabel(){
     return pricelabel;
   }
-
 
 }

@@ -17,12 +17,12 @@ public class DB {
 
   public DB() {
     try {
-      System.out.println("생성자");
+      System.out.println("�깮�꽦�옄");
       Class.forName("com.mysql.cj.jdbc.Driver");
       conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
       System.out.println("드라이버 로딩 성공");
     } catch (Exception e) {
-      System.out.println("드라이버 로딩 실패 ");
+      System.out.println("드라이버 로딩 실패");
       try {
         conn.close();
       } catch (SQLException e1) {
@@ -32,7 +32,7 @@ public class DB {
 
   }
 
-  public int getcoffee(String coffee , int num) throws SQLException {
+  public Integer getcoffee(String coffee , int num) throws SQLException {
     // 쿼리문 준비
     try {
       stmt = conn.createStatement();
@@ -40,10 +40,9 @@ public class DB {
       rs = stmt.executeQuery(str);
       rs.next();
     } catch (Exception e) {
-      System.out.println("Board데이터 삽입 실패!");
+      System.out.println("Board 데이터 삽입 실패!");
     }
 
-    System.out.println(rs.getInt(num));
     return rs.getInt(num);
   }
 

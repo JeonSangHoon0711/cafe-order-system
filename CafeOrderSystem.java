@@ -21,7 +21,7 @@ class MyFrame extends JFrame{
 		super("Database Viewer");
 		Connection con = makeConnection();
 		stmt = con.createStatement();
-		rs = stmt.executeQuery("SELECT * FROM coffee");
+
 
 		String str = "SELECT * FROM coffee WHERE Name = '아메리카노'";
 		rs = stmt.executeQuery(str);
@@ -101,12 +101,13 @@ public class CafeOrderSystem {
 	
 	public static void main(String[] args) throws SQLException{
 		OrderPage OrderPage = new OrderPage();
-	// 	Thread t = new Thread(new Runnable() {
-	// 		MyFrame asdf = new MyFrame();
-  //           public void run() {
-  //               // 여기에서 함수 호출...
-  //           }
-  //       });
+		// Thread t = new Thread(new Runnable() {
+		// 	MyFrame asdf = new MyFrame();
+    //         @Override
+    //         public void run() {
+    //             // 여기에서 함수 호출...
+    //         }
+    //     });
 		
 	}
 

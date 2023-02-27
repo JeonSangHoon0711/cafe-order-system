@@ -30,7 +30,7 @@ public class connectDB {
 		}
 	}
 	
-	public static void dbClose() {
+	public void dbClose() {
 		try {
 			if (rs != null) rs.close();
 			if (st != null) st.close();
@@ -40,7 +40,7 @@ public class connectDB {
 		}
 	}
 	
-	public static int readCoffeePrice(String name) {
+	public int readCoffeePrice(String name) {
 		System.out.println(price);
 		try {
 			st = conn.createStatement();

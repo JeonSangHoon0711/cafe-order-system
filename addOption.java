@@ -105,8 +105,12 @@ public class addOption extends JFrame {
 		minus1 = new button(300, 150, 30, 30, minus);
 		c.add(minus1);
 		
-		coffeePrice = db.getcoffee("아메리카노", 2);
-
+		try {
+			coffeePrice = db.getcoffee(addOption.name, 2);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		price = new label(coffeePrice + "", 350, 150, 100, 30);
 		c.add(price);
 

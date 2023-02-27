@@ -13,14 +13,15 @@ public class OrderPage {
   static JFrame OrderFrame = new JFrame();
   UnderPanel underpanel = new UnderPanel();
   OrderListButton temporder = new OrderListButton();
+  label lab;
   
   public OrderPage() {
-
     
     OrderFrame.setSize(500, 800);
     OrderFrame.setVisible(true);
     OrderFrame.setDefaultCloseOperation(OrderFrame.EXIT_ON_CLOSE);
     OrderFrame.setLayout(null);
+    OrderFrame.setBackground(Color.WHITE);
     
     Image americanoimage = null;
     Image cafelatteimage = null;
@@ -28,7 +29,6 @@ public class OrderPage {
     Image chocolatemochaimage = null;
     Image coldbrewimage = null;
     Image dolcelatteimage = null;
-
 
     try {
       URL url = new URL("https://github.com/JeonSangHoon0711/cafe-order-system-image/blob/main/Americano.jpg?raw=true");
@@ -75,17 +75,32 @@ public class OrderPage {
     coldbrewButton.addActionListener(new CoffeeListener(4));
     dolcelatteButton.addActionListener(new CoffeeListener(5));
 
-    americanoButton.setBounds(80, 10, 130, 130);
-    cafelatteButton.setBounds(260, 10, 130, 130);
-    cappuccinoButton.setBounds(80, 190, 130, 130);
-    chocolatemochaButton.setBounds(260, 190, 130, 130);
-    coldbrewButton.setBounds(80, 370, 130, 130);
-    dolcelatteButton.setBounds(260, 370, 130, 130); 
+    americanoButton.setBounds(80, 40, 130, 130);
+    cafelatteButton.setBounds(260, 40, 130, 130);
+    cappuccinoButton.setBounds(80, 220, 130, 130);
+    chocolatemochaButton.setBounds(260, 220, 130, 130);
+    coldbrewButton.setBounds(80, 400, 130, 130);
+    dolcelatteButton.setBounds(260, 400, 130, 130); 
+    
+    lab = new label("아메리카노 4100원", 90, 170, 110, 20);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("카페라떼 4600원", 275, 170, 110, 20);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("카푸치노 4600원", 95, 350, 110, 20);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("초콜릿모카 5600원", 270, 350, 110, 20);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("콜드브루 4400원", 95, 530, 110, 20);
+    OrderFrame.getContentPane().add(lab);
+    lab = new label("돌체라떼 5600원", 275, 530, 110, 20);
+    OrderFrame.getContentPane().add(lab);
+    
+    OrderFrame.getContentPane().setBackground(Color.white);
     
     OrderFrame.add(UnderPanel.pricelabel);
     OrderFrame.add(UnderPanel.orderlistPane);
-    OrderFrame.add(UnderPanel.underpanel);
     OrderFrame.add(UnderPanel.orderbutton);
+    OrderFrame.add(UnderPanel.underpanel);
     OrderFrame.add(OrderListButton.orderlistbutton);
     OrderFrame.getContentPane().add(americanoButton);
     OrderFrame.getContentPane().add(cafelatteButton);

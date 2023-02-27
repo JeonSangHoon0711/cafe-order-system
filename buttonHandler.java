@@ -67,10 +67,12 @@ public class buttonHandler implements ActionListener {
 			shot = Integer.parseInt(addOption.cnt4.getText());
 			price = Integer.parseInt(addOption.price.getText());
 			history = new Data(menu, num, temp, size, whipping, syrup, shot, price);
+
 			addOption.optionPrice = 0;
 			UnderPanel.orderlistTextArea.append("메뉴명: "+menu+" 수량: "+num+"개 가격: "+price+"\n");
 			UnderPanel.price += price;
 			UnderPanel.pricelabel.setText("가격 : " + UnderPanel.price);
+			OrderStack.OrderStack.add("메뉴명 : " + temp + menu + " / 사이즈 : "+ size +" / 휘핑 : " + whipping + " 번 " + "/ 시럽 : " + syrup + " 번 " + "/ 수량 : "+num+ " 개 / 가격: "+price+"\n");
 			OrderPage.OrderFrame.repaint();
 			CoffeeListener.optionFrame.dispose();
 		}
